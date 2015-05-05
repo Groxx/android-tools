@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ $# -ne 2 ]; then
+  echo "Needs two arguments."
+  echo "Copies anything sent over stdout, including binary data."
+  echo "Example usage: "
+  echo "    acp 'run-as com.whatever cat databases/file.db' file.db"
+  echo "    acp 'screencap -p' screen.png"
+  echo "Works by translating anything sent over stdout into something that can be saved to a file"
+  exit 1
+fi
+
+adb shell "$1" | perl -pe 's/\x0D\x0A/\x0A/g' > "$2"
