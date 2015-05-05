@@ -6,7 +6,8 @@ if [ $# -ne 2 ]; then
   echo "Example usage: "
   echo "    acp 'run-as com.whatever cat databases/file.db' file.db"
   echo "    acp 'screencap -p' screen.png"
-  echo "Works by translating anything sent over stdout into something that can be saved to a file"
+  echo "Works by translating anything sent over stdout into something that can be saved to a file."
+  echo "I don't know who to credit for the perl script that does this, but many thanks!  You're a lifesaver!"
   exit 1
 fi
 
